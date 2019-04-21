@@ -21,13 +21,18 @@ module.exports = {
         },
         "qa": {
             "webdriver": {
+                //may be required in case of running on different machine e.g in case of grid
+                // "host":"",
                 "port": 9515,
                 "server_path": "./bin/chromedriver-2.32",
+                //list of command line args that can be passed to webdriver
                 "cli_args": ["--verbose"]
             },
             "desiredCapabilities": {
                 "browserName": "chrome"
-            }
+            },
+            //each test env can have it's own global
+            // "globals_path":""
         }
     },
     //contain information about selenium server can be useful if running test on grid--uncomment to use it
@@ -39,12 +44,14 @@ module.exports = {
     //path where the custom commands are kept
     "custom_commands_path": {
 
-        
     },
     //path from where page objects are loaded
     "page_objects_path": [],
     //path from where globals will be loaded -- uncomment to use it
-    // "globals_path":"",
+    //globals are dictonary of key value pair e.g launch_url and it's value
+    //to use it in a test e.g browser.globals.launch_url
+    //this is external test globals as it is defined in external file it could have been defined over here
+    "globals_path":"",
     //if set to true then each test file will be run in parallel
     "test_workers": {
         "enabled": false,
