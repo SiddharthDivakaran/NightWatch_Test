@@ -39,6 +39,7 @@ module.exports = {
     //path where the custom commands are kept
     "custom_commands_path": {
 
+        
     },
     //path from where page objects are loaded
     "page_objects_path": [],
